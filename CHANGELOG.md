@@ -1,3 +1,5 @@
+## Next (YYYY-MM-DD)
+
 ## 0.0.1 (2018-11-08)
 
 Initial release with a minimal feature set.
