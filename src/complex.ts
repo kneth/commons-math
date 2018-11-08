@@ -71,13 +71,18 @@ export class Complex {
      * @returns the results
      */
     div(z: Complex): Complex {
-        let d = this.re * this.re + this.im * this.im;
+        let x = z.re;
+        let y = z.im;
+        let u = this.re;
+        let v = this.im;
+
+        let d = x * x + y * y;
         if (d === 0.0) {
             throw new Error('Division by zero');
         }
 
-        let re = (this.re * z.re + z.im * this.im) / d;
-        let im = (z.im * this.re - z.re * this.im) / d;
+        let re = (u * x + v * y) / d;
+        let im = (v * x - u * y) / d;
 
         return new Complex(re, im);
     }
