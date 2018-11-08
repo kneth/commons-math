@@ -2,6 +2,7 @@
 
 - `Complex`' constructor now has imaginary part set to 0 as default.
 - Adds `Complex.sqrt()` to compute the square root of a complex number.
+- Adds `Complex.mod()` to compute modulus of a complex number.
 
 ## 0.0.1 (2018-11-08)
 

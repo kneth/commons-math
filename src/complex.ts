@@ -25,6 +25,15 @@ export class Complex {
     }
 
     /**
+     * Returns the modulus
+     *
+     * @returns the modulus
+     */
+    mod(): number {
+        return Math.sqrt(this.re * this.re + this.im * this.im);
+    }
+
+    /**
      * Returns the conjugate
      *
      */

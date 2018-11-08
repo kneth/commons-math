@@ -14,6 +14,19 @@ describe('Complex numbers', () => {
         expect(z2.im).to.equals(0);
     });
 
+    it('should compute the modulus', () => {
+        let z = new Complex(1, 2);
+        expect(z.mod()).to.approximately(Math.sqrt(5), 0.00001);
+    });
+
+    it('should compute the conjugate', () => {
+        let z1 = new Complex(1, 2);
+        let z2 = z1.conj();
+
+        expect(z2.re).to.equals(1);
+        expect(z2.im).to.equals(-2);
+    });
+
     it('should add two complex numbers', () => {
         let z1 = new Complex(1, 2);
         let z2 = new Complex(3, 4);
