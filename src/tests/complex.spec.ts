@@ -5,9 +5,13 @@ import { Complex } from '../complex';
 describe('Complex numbers', () => {
 
     it('should construct a complex number', () => {
-        let z = new Complex(1, 2);
-        expect(z.re).to.equals(1);
-        expect(z.im).to.equals(2);
+        let z1 = new Complex(1, 2);
+        expect(z1.re).to.equals(1);
+        expect(z1.im).to.equals(2);
+
+        let z2 = new Complex(1);
+        expect(z2.re).to.equals(1);
+        expect(z2.im).to.equals(0);
     });
 
     it('should add two complex numbers', () => {
@@ -36,4 +40,15 @@ describe('Complex numbers', () => {
         let z4 = new Complex(0, 0);
         expect(() => { z1.div(z4) }).to.throw();
     });
+
+    it('square root', () => {
+        let z = new Complex(1, 2);
+        let [r1, r2] = z.sqrt();
+
+        expect(r1.re).to.approximately(1.27202, 0.00001);
+        expect(r1.im).to.approximately(0.78615, 0.00001);
+
+        expect(r2.re).to.approximately(-1.27202, 0.00001);
+        expect(r2.im).to.approximately(-0.78615, 0.00001);
+    })
 })
