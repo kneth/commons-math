@@ -1,0 +1,7 @@
+--require source-map-support/register
+--require ts-node/register
+--full-trace
+--timeout 5000
+--preserve-symlinks
+--exit
+src/tests/*.spec.ts

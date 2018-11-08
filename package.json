@@ -1,0 +1,22 @@
+{
+  "name": "commons-math",
+  "version": "0.0.1",
+  "description": "A small library for numerical analysis",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --opts mocha.opts",
+    "build": "npm run clean && ./node_modules/.bin/tsc",
+    "clean": "rm -rf dist"
+  },
+  "author": "Kenneth Geisshirt",
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6"
+  }
+}
