@@ -19,9 +19,18 @@ export class Complex {
     readonly re: number;
     readonly im: number;
 
-    constructor(re: number, im: number) {
+    constructor(re: number, im: number = 0) {
         this.re = re;
         this.im = im;
+    }
+
+    /**
+     * Returns the modulus
+     *
+     * @returns the modulus
+     */
+    mod(): number {
+        return Math.sqrt(this.re * this.re + this.im * this.im);
     }
 
     /**
@@ -30,6 +39,33 @@ export class Complex {
      */
     conj(): Complex {
         return new Complex(this.re, -this.im);
+    }
+
+    /**
+     * Returns polar coordinations (length, angle)
+     */
+    polar(): [number, number] {
+        let x = this.re;
+        let y = this.im;
+
+        let r = Math.sqrt(x * x + y * y);
+
+        let phi: number;
+        if (x > 0) {
+            phi = Math.atan(y / x);
+        } else if (x < 0 && y >= 0) {
+            phi = Math.atan(y / x) + Math.PI;
+        } else if (x < 0 && y < 0) {
+            phi = Math.atan(y / x) - Math.PI;
+        } else if (y > 0) { // x === 0
+            phi = Math.PI / 2;
+        } else if (y < 0) { // x === 0
+            phi = -Math.PI / 2;
+        } else { // x === 0 and y === 0
+            phi = undefined;
+        }
+
+        return [r, phi];
     }
 
     /**
@@ -87,4 +123,20 @@ export class Complex {
         return new Complex(re, im);
     }
 
+    /**
+     * Calculate the square root.
+     *
+     * @returns an array of the two roots
+     */
+    sqrt(): [Complex, Complex] {
+        let a = this.re;
+        let b = this.im;
+
+        let d = a * a + b * b;
+
+        let r1 = Math.sqrt((a + Math.sqrt(d)) / 2);
+        let r2 = Math.sign(b) * Math.sqrt((-a + Math.sqrt(d)) / 2);
+
+        return [new Complex(r1, r2), new Complex(-r1, -r2)];
+    }
 }
