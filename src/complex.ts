@@ -42,6 +42,33 @@ export class Complex {
     }
 
     /**
+     * Returns polar coordinations (length, angle)
+     */
+    polar(): [number, number] {
+        let x = this.re;
+        let y = this.im;
+
+        let r = Math.sqrt(x * x + y * y);
+
+        let phi: number;
+        if (x > 0) {
+            phi = Math.atan(y / x);
+        } else if (x < 0 && y >= 0) {
+            phi = Math.atan(y / x) + Math.PI;
+        } else if (x < 0 && y < 0) {
+            phi = Math.atan(y / x) - Math.PI;
+        } else if (y > 0) { // x === 0
+            phi = Math.PI / 2;
+        } else if (y < 0) { // x === 0
+            phi = -Math.PI / 2;
+        } else { // x === 0 and y === 0
+            phi = undefined;
+        }
+
+        return [r, phi];
+    }
+
+    /**
      * Adds a complex number to this number.
      *
      * @param z - a complex number
