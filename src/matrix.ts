@@ -68,8 +68,16 @@ export class Matrix {
         return this.values[this.get_index(column, row)]
     }
 
+    get_unchecked(column: number, row: number): number {
+        return this.values[this.get_index(column, row)];
+    }
+
     set(column: number, row: number, value: number) {
         this.validate_index(column, row);
+        this.values[this.get_index(column, row)] = value;
+    }
+
+    set_unchecked(column: number, row: number, value: number) {
         this.values[this.get_index(column, row)] = value;
     }
 }

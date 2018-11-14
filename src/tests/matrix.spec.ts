@@ -1,6 +1,7 @@
 import 'mocha';
 import { expect } from 'chai';
 import { Matrix } from '../Matrix';
+import { ENGINE_METHOD_DIGESTS } from 'constants';
 
 describe('Matrix', function () {
 
@@ -52,24 +53,32 @@ describe('Matrix', function () {
         expect(() => { new Matrix(1, -1) }).to.throw();
     });
 
-    it('should set and get', function () {
-        const columns = 2;
-        const rows = 3;
-        let m = new Matrix(columns, rows);
+    let unchecked_list = [false, true];
+    unchecked_list.forEach(unchecked => {
+        it(`should set and get (unchecked = ${unchecked}`, function () {
+            const columns = 2;
+            const rows = 3;
+            let m = new Matrix(columns, rows);
 
-        // first set all elements
-        for (let i = 0; i < columns; i++) {
-            for (let j = 0; j < rows; j++) {
-                m.set(i, j, i * j);
+            // first set all elements
+            for (let i = 0; i < columns; i++) {
+                for (let j = 0; j < rows; j++) {
+                    if (unchecked) {
+                        m.set_unchecked(i, j, i * j);
+                    } else {
+                        m.set(i, j, i * j);
+                    }
+                }
             }
-        }
 
-        // new get the elements
-        for (let i = 0; i < columns; i++) {
-            for (let j = 0; j < rows; j++) {
-                expect(m.get(i, j)).to.equals(i * j);
+            // new get the elements
+            for (let i = 0; i < columns; i++) {
+                for (let j = 0; j < rows; j++) {
+                    let value = unchecked?m.get_unchecked(i, j):m.get(i, j);
+                    expect(value).to.equals(i * j);
+                }
             }
-        }
+        });
     });
 
     it('should throw for invalid indices', function () {
