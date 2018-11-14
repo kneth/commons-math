@@ -18,6 +18,30 @@ describe('Matrix', function () {
         }
     });
 
+    it('should create square matrix', function () {
+        const columns = 2;
+        let m = new Matrix(columns);
+
+        expect(m.n_columns).to.equals(columns);
+        expect(m.n_rows).to.equals(columns);
+    });
+
+    it('should create unit matrix', function () {
+        const columns = 2;
+        const rows = 2;
+        let m = new Matrix(columns, rows, true);
+
+        for (let i = 0; i < columns; i++) {
+            for (let j = 0; j < rows; j++) {
+                expect(m.get(i, j)).to.equals((i === j)?1.0:0.0);
+            }
+        }
+    });
+
+    it('should throw creating unit matrix if not square', function () {
+        expect(() => { new Matrix(2, 3, true)}).to.throw();
+    });
+
     it('should throw for invalid dimensions', function () {
         // 0 is not valid
         expect(() => { new Matrix(0, 1) }).to.throw();

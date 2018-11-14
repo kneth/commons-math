@@ -17,21 +17,36 @@ export class Matrix {
     readonly n_rows: number;
     private values: Float64Array;
 
-    constructor(n_columns: number, n_rows: number) {
+    constructor(n_columns: number, n_rows?: number, unit?: boolean) {
         if (n_columns <= 0) {
             throw new Error(`Invalid argument: ${n_columns} <= 0`);
+        }
+
+        if (n_rows === undefined) {
+            n_rows = n_columns;
         }
 
         if (n_rows <= 0) {
             throw new Error(`Invalid argument: ${n_columns} <= 0`);
         }
 
+        if (unit && n_columns !== n_rows) {
+            throw new Error(`Unit matrix is only possible for square matrices: ${n_columns} !== ${n_rows}`);
+        }
+
         this.n_columns = n_columns;
         this.n_rows = n_rows;
 
         this.values = new Float64Array(this.n_columns * this.n_rows);
-        for (let i = 0; i < this.n_columns * this.n_rows; i++) {
-            this.values[i] = 0.0;
+        for (let i = 0; i < this.n_columns; i++) {
+            for (let j = 0; j < this.n_columns; j++) {
+                let index = this.get_index(i, j);
+                if (unit && i === j) {
+                    this.values[index] = 1.0;
+                } else {
+                    this.values[index] = 0.0;
+                }
+            }
         }
     }
 
