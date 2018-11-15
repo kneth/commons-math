@@ -38,14 +38,12 @@ export class Matrix {
         this.n_rows = n_rows;
 
         this.values = new Float64Array(this.n_columns * this.n_rows);
-        for (let i = 0; i < this.n_columns; i++) {
-            for (let j = 0; j < this.n_columns; j++) {
-                let index = this.get_index(i, j);
-                if (unit && i === j) {
-                    this.values[index] = 1.0;
-                } else {
-                    this.values[index] = 0.0;
-                }
+
+        // Float64Array is initialized with zeros, so we only have to set the diagonal to 1.0
+        if (unit) {
+            for (let i = 0; i < this.n_columns; i++) {
+                let index = this.get_index(i, i);
+                this.values[index] = 1.0;
             }
         }
     }
