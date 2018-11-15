@@ -1,6 +1,7 @@
 ## Next (YYYY-MM-DD)
 
 - Adds a simple `Matrix` class.
+- Adds a simple `Vector` class.
 
 ## 0.1.0 (2018-11-11)
 

@@ -54,7 +54,7 @@ describe('Matrix', function () {
 
     let unchecked_list = [false, true];
     unchecked_list.forEach(unchecked => {
-        it(`should set and get (unchecked = ${unchecked}`, function () {
+        it(`should set and get (unchecked = ${unchecked})`, function () {
             const columns = 2;
             const rows = 3;
             let m = new Matrix(columns, rows);
