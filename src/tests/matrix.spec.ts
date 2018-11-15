@@ -1,7 +1,6 @@
 import 'mocha';
 import { expect } from 'chai';
 import { Matrix } from '../Matrix';
-import { ENGINE_METHOD_DIGESTS } from 'constants';
 
 describe('Matrix', function () {
 
