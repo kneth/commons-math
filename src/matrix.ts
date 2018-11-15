@@ -50,10 +50,10 @@ export class Matrix {
 
     private validate_index(column: number, row: number) {
         if (column < 0 || column > this.n_columns) {
-            throw new Error(`Invalid column: + <= ${column} < ${this.n_columns}`);
+            throw new Error(`Invalid column: 0 <= ${column} < ${this.n_columns}`);
         }
         if (row < 0 || row > this.n_rows) {
-            throw new Error(`Invalid row: + <= ${row} < ${this.n_rows}`);
+            throw new Error(`Invalid row: 0 <= ${row} < ${this.n_rows}`);
         }
     }
 
