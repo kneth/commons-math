@@ -1,5 +1,8 @@
 ## Next (YYYY-MM-DD)
 
+- Adds a simple `Matrix` class.
+- Adds a simple `Vector` class.
+
 ## 0.1.0 (2018-11-11)
 
 - `Complex`' constructor now has imaginary part set to 0 as default.
