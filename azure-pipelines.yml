@@ -2,22 +2,15 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-- task: gittools.gitversion.gitversion-task.GitVersion@4
-  displayName: GitVersion
-
 - task: NodeTool@0
   inputs:
     versionSpec: '8.x'
 
-- task: Npm@1
-  displayName: 'npm install'
-  inputs:
-    command: install
+-script: npm install --only=dev
 
-- task: Npm@2
-  displayName: 'npm test'
-  inputs:
-    command: ci-test
+-script: npm run build
+
+-script: npm test
 
 - task: PublishTestResults@2
   inputs:
