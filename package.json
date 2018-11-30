@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --opts mocha.opts",
+    "ci-test": "./node_modules/.bin/mocha --opts mocha.opts --reporter mocha-junit-reporter",
     "build": "npm run clean && ./node_modules/.bin/tsc",
     "clean": "rm -rf dist"
   },
