@@ -6,11 +6,11 @@ steps:
   inputs:
     versionSpec: '8.x'
 
--script: npm install --only=dev
+- script: npm install --only=dev
 
--script: npm run build
+- script: npm run build
 
--script: npm test
+- script: npm test
 
 - task: PublishTestResults@2
   inputs:
