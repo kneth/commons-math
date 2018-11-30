@@ -10,7 +10,7 @@ steps:
 
 - script: npm run build
 
-- script: npm test
+- script: npm run ci-test
 
 - task: PublishTestResults@2
   inputs:
