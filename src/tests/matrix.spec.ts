@@ -14,7 +14,7 @@
 
 import 'mocha';
 import { expect } from 'chai';
-import { Matrix } from '../Matrix';
+import { Matrix } from '../matrix';
 
 describe('Matrix', function () {
 

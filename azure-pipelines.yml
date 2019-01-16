@@ -12,7 +12,7 @@ steps:
 
 - script: npm run ci-test
 
-- task: PublishTestResults@2
+- task: PublishTestResults@1
   inputs:
     testRunner: JUnit
     testResultsFiles: ./test-results.xml
