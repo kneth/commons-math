@@ -1,0 +1,18 @@
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '8.x'
+
+- script: npm install --only=dev
+
+- script: npm run build
+
+- script: npm run ci-test
+
+- task: PublishTestResults@1
+  inputs:
+    testRunner: JUnit
+    testResultsFiles: ./test-results.xml
