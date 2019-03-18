@@ -1,5 +1,7 @@
 ## NEXT (YYYY-MM-DD)
 
+## 0.3.0 (2019-03-18)
+
 - Adds a simple `Fraction` class to represent fractions.
 - Adds `Complex.toString()`.
 

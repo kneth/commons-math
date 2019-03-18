@@ -1,6 +1,6 @@
 {
   "name": "commons-math",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A small library of common data types and numerical methods for solving mathematical problems",
   "main": "index.js",
   "scripts": {
