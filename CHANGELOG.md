@@ -1,5 +1,7 @@
 ## NEXT (YYYY-MM-DD)
 
+- Adds a simple `Fraction` class to represent fractions.
+
 ## 0.2.0 (2018-11-15)
 
 - Adds a simple `Matrix` class.
