@@ -3,6 +3,8 @@
 ## Features
 
 * Immutable complex numbers (`Complex`)
+* Immutable fractions (`Fractions`)
+* Vectors (`Vector`) and matrices (`Matrix`)
 
 ## Installation
 
