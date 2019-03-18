@@ -139,4 +139,8 @@ export class Complex {
 
         return [new Complex(r1, r2), new Complex(-r1, -r2)];
     }
+
+    toString(): string {
+        return `(${this.re}, ${this.im})`;
+    }
 }

@@ -22,10 +22,12 @@ describe('Complex numbers', function () {
         let z1 = new Complex(1, 2);
         expect(z1.re).to.equals(1);
         expect(z1.im).to.equals(2);
+        expect(z1.toString()).to.equals('(1, 2)');
 
         let z2 = new Complex(1);
         expect(z2.re).to.equals(1);
         expect(z2.im).to.equals(0);
+        expect(z2.toString()).to.equals('(1, 0)');
     });
 
     it('should compute the modulus', function () {
