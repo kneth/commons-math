@@ -11,6 +11,9 @@
   },
   "author": "Kenneth Geisshirt",
   "license": "Apache-2.0",
+  "files": [
+    "dist"
+  ],
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.1.7",

@@ -1,5 +1,7 @@
 ## NEXT (YYYY-MM-DD)
 
+- Starts distributing JavaScript files only
+
 ## 0.3.0 (2019-03-18)
 
 - Adds a simple `Fraction` class to represent fractions.
