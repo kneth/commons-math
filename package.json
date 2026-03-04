@@ -4,8 +4,8 @@
   "description": "A small library of common data types and numerical methods for solving mathematical problems",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --opts mocha.opts",
-    "ci-test": "./node_modules/.bin/mocha --opts mocha.opts --reporter mocha-junit-reporter",
+    "test": "./node_modules/.bin/mocha",
+    "ci-test": "./node_modules/.bin/mocha --reporter mocha-junit-reporter",
     "build": "npm run clean && ./node_modules/.bin/tsc",
     "clean": "rm -rf dist"
   },
@@ -14,14 +14,13 @@
   "files": [
     "dist"
   ],
-  "dependencies": {},
   "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.5",
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "mocha-junit-reporter": "^1.18.0",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.1.6"
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "chai": "^6.2.2",
+    "mocha": "^11.7.5",
+    "mocha-junit-reporter": "^2.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   }
 }
