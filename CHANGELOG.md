@@ -1,6 +1,8 @@
 ## NEXT (YYYY-MM-DD)
 
-- Starts distributing JavaScript files only
+- Starts distributing JavaScript files only.
+- Migrates from Azure Pipelines to GitHub Actions.
+- Updates developer dependencies.
 
 ## 0.3.0 (2019-03-18)
 
