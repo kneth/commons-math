@@ -33,12 +33,12 @@ export class Vector {
 
     get(index: number): number {
         this.validate_index(index);
-        return this.values[index];
+        return this.get_unchecked(index);
     }
 
     set(index: number, value: number) {
         this.validate_index(index);
-        this.values[index] = value;
+        this.set_unchecked(index, value);
     }
 
     get_unchecked(index: number): number {
@@ -47,5 +47,17 @@ export class Vector {
 
     set_unchecked(index: number, value: number) {
         this.values[index] = value;
+    }
+
+    dot(other: Vector) {
+        if (this.n_dimensions != other.n_dimensions) {
+            throw new Error(`Dimensions do not match (${this.n_dimensions} != ${other.n_dimensions})`);
+        }
+
+        let d = 0.0;
+        for (let i = 0; i < this.n_dimensions; i++) {
+            d += this.get_unchecked(i)*other.get_unchecked(i);
+        }
+        return d;
     }
 }

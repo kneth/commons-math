@@ -63,7 +63,7 @@ export class Matrix {
 
     get(column: number, row: number): number {
         this.validate_index(column, row);
-        return this.values[this.get_index(column, row)]
+        return this.get_unchecked(column, row);
     }
 
     get_unchecked(column: number, row: number): number {
@@ -72,7 +72,7 @@ export class Matrix {
 
     set(column: number, row: number, value: number) {
         this.validate_index(column, row);
-        this.values[this.get_index(column, row)] = value;
+        this.set_unchecked(column, row, value);
     }
 
     set_unchecked(column: number, row: number, value: number) {

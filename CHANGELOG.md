@@ -3,6 +3,7 @@
 - Starts distributing JavaScript files only.
 - Migrates from Azure Pipelines to GitHub Actions.
 - Updates developer dependencies.
+- Adds `Vector.dot()` to compute the dot product.
 
 ## 0.3.0 (2019-03-18)
 
