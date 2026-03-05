@@ -51,4 +51,17 @@ describe('Vector', function () {
             }
         });
     });
+
+    it('dot product', function () {
+        const dim = 3;
+        let v1 = new Vector(dim);
+        let v2 = new Vector(dim);
+        let v3 = new Vector(dim + 1);
+
+        v1.set(1, 1.0);
+        v2.set(2, 1.0);
+        expect(v1.dot(v1)).to.approximately(1.0, 0.001);
+        expect(v1.dot(v2)).to.approximately(0.0, 0.001);
+        expect(() => { v1.dot(v3); }).to.throw();
+    });
 })
