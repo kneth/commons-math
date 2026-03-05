@@ -9,7 +9,15 @@
     "build": "npm run clean && ./node_modules/.bin/tsc",
     "clean": "rm -rf dist"
   },
-  "author": "Kenneth Geisshirt",
+  "author": {
+    "name": "Kenneth Geisshirt",
+    "email": "k@zigzak.net",
+    "url": "https://k.zigzak.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kneth/commons-math"
+  },
   "license": "Apache-2.0",
   "files": [
     "dist"
