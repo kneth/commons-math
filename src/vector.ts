@@ -33,12 +33,12 @@ export class Vector {
 
     get(index: number): number {
         this.validate_index(index);
-        return this.values[index];
+        return this.get_unchecked(index);
     }
 
     set(index: number, value: number) {
         this.validate_index(index);
-        this.values[index] = value;
+        this.set_unchecked(index, value);
     }
 
     get_unchecked(index: number): number {
