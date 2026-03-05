@@ -1,4 +1,4 @@
-## NEXT (YYYY-MM-DD)
+## 0.3.1 (2026-03-05)
 
 - Starts distributing JavaScript files only.
 - Migrates from Azure Pipelines to GitHub Actions.
